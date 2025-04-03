@@ -1,2 +1,2 @@
-(()=>{var e={n:o=>{var r=o&&o.__esModule?()=>o.default:()=>o;return e.d(r,{a:r}),r},d:(o,r)=>{for(var t in r)e.o(r,t)&&!e.o(o,t)&&Object.defineProperty(o,t,{enumerable:!0,get:r[t]})},o:(e,o)=>Object.prototype.hasOwnProperty.call(e,o)};(()=>{"use strict";const o=flarum.reg.get("core","admin/app");e.n(o)().initializers.add("yazz-discussionpost",(()=>{console.log("[yazz/discussionpost] Hello, admin!")}))})(),module.exports={}})();
+(()=>{"use strict";flarum.core.compat["admin/app"].initializers.add("yazz-discussionpost",(function(){console.log("[yazz/discussionpost] Hello, admin!")}))})(),module.exports={};
 //# sourceMappingURL=admin.js.map

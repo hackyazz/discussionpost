@@ -16,4 +16,4 @@ app.initializers.add('yazz-discussionpost', () => {
     items.add('postimage', m(PostImage, {post: firstPost}));
   })
 
-});
+}, -10);

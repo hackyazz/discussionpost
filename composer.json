@@ -40,7 +40,6 @@
                 "gitConf": true,
                 "githubActions": false,
                 "prettier": true,
-                "typescript": true,
                 "bundlewatch": true,
                 "frontendTesting": true,
                 "backendTesting": true,
