@@ -6,13 +6,9 @@ import PostImage from './PostImage';
 // export { default as extend } from './extend';
 
 app.initializers.add('yazz-discussionpost', () => {
-  console.log('[yazz/discussionpost] Hello, forum!');
-
-  let discussionpost = DiscussionListItem;
+  console.log('[yazz/discussionpost] Hello, forum11111!');
 
   extend(DiscussionListItem.prototype, "mainItems", function(items) {
-    // let discussion = discussionpost.prototype.attrs("discussion") || {};
-    // let firstPost = discussion.firstPost() || {};
     items.add('postimage', <p>discussion</p>);
   })
 
