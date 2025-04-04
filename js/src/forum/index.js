@@ -30,12 +30,16 @@ app.initializers.add('yazz-discussionpost', () => {
     if(!firstPost) {items.add("postimage", <p className='PostImage'>firstpost为空</p>);return;}
     const content = firstPost.contentHtml();
     const imgSrcList = extractImageSrcs(content);
+    console.log("imgScList", imgSrcList, typeof(imgSrcList));
     if(imgSrcList.length == 0) return;
 
-    items.add('postimage', <p className='PostImage'>{imgSrcList.map((src) => {
-      <img src={src}
-        loading='lazy' />
-    })}</p>);
+    items.add('postimage',
+      <p className='PostImage'>
+        {imgSrcList.map((src) => (
+          <img className='FoFUpload--Upl-Image-Preview' src={src} loading='lazy' />
+        ))}
+      </p>
+    );
     items.add('postimgsrc', <p className='PostImage'>{imgSrcList}</p>);
   })
 
