@@ -30,7 +30,7 @@ app.initializers.add('yazz-discussionpost', () => {
     if(!firstPost) {items.add("postimage", <p className='PostImage'>firstpost为空</p>);return;}
     const content = firstPost.contentHtml();
     const imgSrcList = extractImageSrcs(content);
-    console.log("imgScList", imgSrcList, typeof(imgSrcList));
+
     if(imgSrcList.length == 0) return;
 
     items.add('postimage',
