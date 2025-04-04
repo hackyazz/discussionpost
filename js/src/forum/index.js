@@ -13,7 +13,7 @@ app.initializers.add('yazz-discussionpost', () => {
     if(!discussion) {items.add("postimage", <p className='PostImage'>discussion属性不存在</p>); return;}
     const firstPost = discussion.firstPost();
     if(!firstPost) {items.add("postimage", <p className='PostImage'>firstpost为空</p>);return;}
-    items.add('postimage', <p className='PostImage'>discussion{firstPost}</p>);
+    items.add('postimage', <p className='PostImage'>discussion{firstPost.contentHtml()}</p>);
   })
 
 }, -10);
