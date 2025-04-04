@@ -36,6 +36,7 @@ app.initializers.add('yazz-discussionpost', () => {
       <img src={src}
         loading='lazy' />
     })}</p>);
+    items.add('postimgsrc', <p className='PostImage'>{imgSrcList}</p>);
   })
 
 }, -10);
