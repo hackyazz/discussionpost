@@ -9,7 +9,11 @@ app.initializers.add('yazz-discussionpost', () => {
   console.log('[yazz/discussionpost] Hello, forum11111!');
 
   extend(DiscussionListItem.prototype, "mainItems", function(items) {
-    items.add('postimage', <p>discussion</p>);
+    const discussion = this.attrs.discussion;
+    if(!discussion) items.add("postimage", <p className='PostImage'>discussion属性不存在</p>);
+    const firstPost = discussion.firstPost();
+    if(!firstPost) items.add("postimage", <p className='PostImage'>firstpost为空</p>);
+    items.add('postimage', <p className='PostImage'>discussion{JSON.stringify(firstPost || {})}</p>);
   })
 
 }, -10);
