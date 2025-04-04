@@ -35,12 +35,13 @@ app.initializers.add('yazz-discussionpost', () => {
 
     items.add('postimage',
       <p className='PostImage'>
-        {imgSrcList.map((src) => (
-          <img className='FoFUpload--Upl-Image-Preview' src={src} loading='lazy' />
-        ))}
+        {imgSrcList.map((src) => {
+          if(src.includes("assets/files/")) {
+            return <img className='width: 200px;' src={src} loading='lazy' />
+          }
+        })}
       </p>
     );
-    items.add('postimgsrc', <p className='PostImage'>{imgSrcList}</p>);
   })
 
 }, -10);
