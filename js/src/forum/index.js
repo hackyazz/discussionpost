@@ -37,7 +37,7 @@ app.initializers.add('yazz-discussionpost', () => {
       <p className='PostImage'>
         {imgSrcList.map((src) => {
           if(src.includes("assets/files/")) {
-            return <img className='width: 200px;' src={src} loading='lazy' />
+            return <img style='width: 200px;' src={src} loading='lazy' />
           }
         })}
       </p>
