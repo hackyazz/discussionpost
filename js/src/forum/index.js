@@ -5,6 +5,21 @@ import PostImage from './PostImage';
 
 // export { default as extend } from './extend';
 
+function extractImageSrcs(htmlString) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(htmlString, 'text/html');
+  const imgElements = doc.querySelectorAll('img');
+  const srcList = [];
+
+  imgElements.forEach(img => {
+    if (img.src) {
+      srcList.push(img.src);
+    }
+  });
+
+  return srcList;
+}
+
 app.initializers.add('yazz-discussionpost', () => {
   console.log('[yazz/discussionpost] Hello, forum11111!');
 
@@ -13,7 +28,14 @@ app.initializers.add('yazz-discussionpost', () => {
     if(!discussion) {items.add("postimage", <p className='PostImage'>discussion属性不存在</p>); return;}
     const firstPost = discussion.firstPost();
     if(!firstPost) {items.add("postimage", <p className='PostImage'>firstpost为空</p>);return;}
-    items.add('postimage', <p className='PostImage'>discussion{firstPost.contentHtml()}</p>);
+    const content = firstPost.contentHtml();
+    const imgSrcList = extractImageSrcs(content);
+    if(imgSrcList.length == 0) return;
+
+    items.add('postimage', <p className='PostImage'>{imgSrcList.map((src) => {
+      <img src={src}
+        loading='lazy' />
+    })}</p>);
   })
 
 }, -10);
