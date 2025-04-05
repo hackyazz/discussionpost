@@ -24,9 +24,9 @@
             "title": "Discussionpost",
             "category": "",
             "icon": {
-                "name": "",
-                "color": "",
-                "backgroundColor": ""
+                "name": "fa fa-picture-o",
+                "color": "#FFCC99",
+                "backgroundColor": "#FFFFCC"
             }
         },
         "flarum-cli": {
