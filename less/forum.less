@@ -1,7 +1,18 @@
-.PostImage {
-    display: flex;
-    gap: 12px;
-    padding-top: 12px;
+.PostImageWraper {
+  display: grid;
+  gap: 12px;
+  padding-top: 12px;
+  width: 100%;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  .PostImage {
     width: 100%;
-    flex-wrap: wrap;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
