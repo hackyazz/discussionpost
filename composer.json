@@ -24,7 +24,7 @@
             "title": "Discussionpost",
             "category": "",
             "icon": {
-                "name": "fa fa-picture-o",
+                "name": "fas fa-picture-o",
                 "color": "#FFCC99",
                 "backgroundColor": "#FFFFCC"
             }
