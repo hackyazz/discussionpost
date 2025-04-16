@@ -43,12 +43,14 @@ app.initializers.add(
 
       items.add(
         'postimage',
-        <p className="PostImageWraper">
-          {imgSrcList.slice(0,5).map((src) => {
-            if (src.includes('assets/files/')) {
-              return <img className='PostImage' src={src} loading="lazy" />;
-            }
-          })}
+        <p className='PostContainer'>
+          <p className="PostImageWraper">
+            {imgSrcList.slice(0, 5).map((src) => {
+              if (src.includes('assets/files/')) {
+                return <img className="PostImage" src={src} loading="lazy" />;
+              }
+            })}
+          </p>
         </p>
       );
     });

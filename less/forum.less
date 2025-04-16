@@ -1,3 +1,8 @@
+.PostImageContainer {
+  container-type: inline-size;
+  /* 或 container: inline-size; 也可以 */
+}
+
 .PostImageWraper {
   display: grid;
   gap: 8px;
@@ -7,7 +12,7 @@
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-template-rows: 1fr;
 
-  img:nth-of-type(n+6) {
+  img:nth-of-type(n + 6) {
     display: none;
   }
 
@@ -17,12 +22,13 @@
     object-fit: cover;
   }
 
-  @media screen and (max-width: 767px) {
+  @container (max-width: 767px) {
     gap: 4px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    img:nth-of-type(n+4) {
-        display: none;
-      }
+    img:nth-of-type(n + 4) {
+      display: none;
+    }
   }
+  
 }
