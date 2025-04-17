@@ -24,6 +24,20 @@ app.initializers.add(
   'yazz-discussionpost',
   () => {
     console.log('[yazz/discussionpost] Hello, forum11111!');
+    
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @container (max-width: 767px) {
+        .PostImageWraper {
+          gap: 4px !important;
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        }
+        .PostImageWraper img:nth-of-type(n + 4) {
+          display: none;
+        }
+      }
+    `;
+    document.head.appendChild(style);
 
     extend(DiscussionListItem.prototype, 'mainItems', function (items) {
       const discussion = this.attrs.discussion;
@@ -43,7 +57,7 @@ app.initializers.add(
 
       items.add(
         'postimage',
-        <div className='PostContainer'>
+        <div className="PostContainer">
           <div className="PostImageWraper">
             {imgSrcList.slice(0, 5).map((src) => {
               if (src.includes('assets/files/')) {
