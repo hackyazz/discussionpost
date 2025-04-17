@@ -24,10 +24,10 @@ app.initializers.add(
   'yazz-discussionpost',
   () => {
     console.log('[yazz/discussionpost] Hello, forum11111!');
-    
+
     const style = document.createElement('style');
     style.innerHTML = `
-      @container (max-width: 767px) {
+      @container (max-width: 600px) {
         .PostImageWraper {
           gap: 4px !important;
           grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
