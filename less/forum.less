@@ -1,4 +1,5 @@
 .PostImageContainer {
+  container-name: postimage;
   container-type: inline-size;
   /* 或 container: inline-size; 也可以 */
 }
@@ -21,8 +22,10 @@
     aspect-ratio: 1 / 1;
     object-fit: cover;
   }
+}
 
-  @container (max-width: 767px) {
+@container postimage (max-width: 767px) {
+  .PostImageWraper {
     gap: 4px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 
@@ -30,5 +33,4 @@
       display: none;
     }
   }
-  
 }
